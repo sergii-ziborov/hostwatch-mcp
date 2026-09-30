@@ -1,0 +1,24 @@
+Hostwatch MCP plugin — Public Integration License
+Copyright (c) 2026 Sergii Ziborov. All rights reserved.
+
+Permission is granted to download, install, use, and redistribute unmodified
+copies of the files in this repository for connecting to the Hostwatch service,
+provided this license and attribution remain with each copy. You may inspect
+the files and submit proposed changes. Distribution of modified versions,
+sale or sublicensing of these files, and incorporation into another product
+require prior written permission.
+
+This license applies only to this repository's MCP metadata, Codex plugin,
+documentation, and icon. It does not license the Hostwatch control plane,
+agent, iOS app, hosted service, or trademarks for use outside this integration.
+Access to the hosted service requires a Hostwatch account and is governed by
+the Hostwatch terms and any applicable organization agreement.
+
+Third-party material remains subject to its own license. This notice does not
+limit rights granted by third-party licenses.
+
+THE FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, INCLUDING
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+TO THE EXTENT PERMITTED BY LAW, THE AUTHOR IS NOT LIABLE FOR CLAIMS OR DAMAGES.
+
+Licensing and support: serhii.ziborov@gmail.com

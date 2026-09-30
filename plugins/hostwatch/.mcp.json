@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hostwatch": {
+      "type": "http",
+      "url": "https://gethostwatch.com/mcp"
+    }
+  }
+}

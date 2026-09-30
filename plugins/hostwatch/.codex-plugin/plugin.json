@@ -1,0 +1,44 @@
+{
+  "name": "hostwatch",
+  "version": "1.0.1",
+  "description": "Inspect and manage Hostwatch infrastructure through its OAuth-protected MCP server.",
+  "author": {
+    "name": "Sergii Ziborov",
+    "url": "https://gethostwatch.com"
+  },
+  "homepage": "https://gethostwatch.com",
+  "repository": "https://github.com/sergii-ziborov/hostwatch-mcp",
+  "license": "LicenseRef-Hostwatch-MCP-Public-Integration",
+  "keywords": [
+    "infrastructure",
+    "monitoring",
+    "tls",
+    "podman",
+    "docker",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Hostwatch",
+    "shortDescription": "Monitor and operate your servers with Hostwatch.",
+    "longDescription": "Connect to your Hostwatch organization with OAuth, using a signed-in iPhone QR code or email, password and two-factor verification. Inspect sites, errors, traffic, runtimes and TLS certificates; owner-approved actions require explicit confirmation.",
+    "developerName": "Sergii Ziborov",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://gethostwatch.com",
+    "privacyPolicyURL": "https://gethostwatch.com/privacy",
+    "termsOfServiceURL": "https://gethostwatch.com/terms",
+    "defaultPrompt": [
+      "Check the health of my Hostwatch sites.",
+      "Investigate recent HTTP errors and suspicious traffic.",
+      "Review TLS certificates expiring soon."
+    ],
+    "brandColor": "#21D4C6",
+    "composerIcon": "./assets/hostwatch.png",
+    "logo": "./assets/hostwatch.png"
+  },
+  "mcpServers": "./.mcp.json"
+}
