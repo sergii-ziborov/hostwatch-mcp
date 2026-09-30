@@ -21,6 +21,8 @@ go install github.com/sergii-ziborov/hostwatch-mcp/cmd/hostwatch-mcp@latest
 hostwatch-mcp login
 ```
 
+Prebuilt macOS, Linux, and Windows executables are also available on the [Releases page](https://github.com/sergii-ziborov/hostwatch-mcp/releases). Download the executable for your operating system and architecture, rename it to `hostwatch-mcp` (`hostwatch-mcp.exe` on Windows), and place it on your `PATH`.
+
 `login` opens the **Hostwatch** authorization page. Sign in to your Hostwatch account directly or approve its QR code with your signed-in Hostwatch app, then review the organization and requested access. The Go app receives a short-lived OAuth authorization code on a temporary loopback callback; it never asks for an API key or node-agent credential. To request write access as an organization owner, use `hostwatch-mcp login --write`. Hostwatch still asks for explicit confirmation for each write operation.
 
 Configure your MCP client to launch the app over stdio. For example, in a client that supports `mcpServers`:
