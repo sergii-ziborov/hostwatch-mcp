@@ -12,6 +12,12 @@ The OAuth session is stored in an owner-only file under the operating system's u
 
 The remote server remains the source of all operations and authorization decisions. The Go app has no node-agent token and cannot bypass organization membership, owner-only writes, node governance, or per-action confirmation.
 
+## Node.js/npm stdio bridge
+
+The package in this repository also provides `hostwatch-mcp-node` for Node.js 22+. Install it with `npm install -g github:sergii-ziborov/hostwatch-mcp#v1.1.0`, then run `hostwatch-mcp-node login`. Use `hostwatch-mcp-node serve` as the MCP client's stdio command. `login --write` requests the owner-only write scope; `login --no-browser` prints the authorization URL and accepts the callback URL pasted back into the terminal. `status`, `logout`, `HOSTWATCH_ORIGIN`, and `HOSTWATCH_NODE_SESSION_FILE` are supported. The Node bridge stores a separate owner-only OAuth session, named **Hostwatch npm MCP** in Hostwatch's connected-client list.
+
+The Node and Go bridges both reach the hosted `/mcp` endpoint through the signed-in user's OAuth grant. Neither runs a second local agent or reads the monitored node directly. The Node implementation uses built-in HTTP, crypto, and filesystem APIs; compiling Go to WASM would still require a Node host for those operations and would add a distribution layer without changing the security model.
+
 The server advertises OAuth metadata at `/.well-known/oauth-protected-resource` and `/.well-known/oauth-authorization-server`. Clients can register through `/oauth/register`, receive authorization through `/oauth/authorize`, exchange and refresh tokens through `/oauth/token`, and revoke tokens through `/oauth/revoke`. Access tokens expire after one hour; refresh tokens rotate. The user can revoke a connected client in Hostwatch under **Organization → Connected MCP clients**.
 
 `search` returns allowlisted operation names and required access levels. `execute` runs one operation. Read operations include `overview`, `sites`, `site_details`, `tls_site`, `data_services`, `network_ports`, `storage`, `cleanup_preview`, `projects`, `jobs`, `traffic`, `sources`, `threats`, `errors`, `error_context`, `traffic_guard`, `mcp_governance`, `runtimes`, `workloads`, `applications`, `peers`, and `links`. Set `nodeId` to select a non-primary node.

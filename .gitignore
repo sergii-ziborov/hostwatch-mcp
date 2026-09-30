@@ -1,1 +1,3 @@
 /hostwatch-mcp
+/node_modules/
+/*.tgz

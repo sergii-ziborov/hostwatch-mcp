@@ -42,6 +42,17 @@ If your MCP client cannot find the installed executable, use the absolute path f
 
 Clients with native Streamable HTTP and OAuth support can connect straight to `https://gethostwatch.com/mcp`. The Go app is a client-side bridge to that same Hostwatch account, not an independent infrastructure agent. The server is [listed in the official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.sergii-ziborov%2Fhostwatch&version=latest).
 
+## Install the Node.js/npm alternative
+
+The dependency-free Node.js bridge provides the same account-based OAuth connection and stdio MCP behavior without a Go toolchain or WASM runtime. Install Node.js 22 or newer, then install the versioned public repository through npm:
+
+```sh
+npm install -g github:sergii-ziborov/hostwatch-mcp#v1.1.0
+hostwatch-mcp-node login
+```
+
+Hostwatch's sign-in page offers direct or QR sign-in. Use `hostwatch-mcp-node login --write` only when you need owner-approved changes. Configure a local MCP client with `"command": "hostwatch-mcp-node"` and `"args": ["serve"]`; `status` and `logout` work like the Go bridge. The Node bridge keeps its own owner-only OAuth session under the user configuration directory and can be revoked from **Hostwatch → Organization → Connected MCP clients**. See [the connection guide](docs/mcp.md#nodejsnpm-stdio-bridge) for details.
+
 ## What it can do
 
 `search` discovers read and write operations; `execute` runs a named operation. Monitoring covers sites, TLS certificates, traffic, suspicious requests, HTTP errors, Docker and Podman workloads, storage, data services, jobs, and node health. Two resources describe the operation catalog, and two prompts guide incident and TLS reviews. See [docs/mcp.md](docs/mcp.md) for the operation list and security model.

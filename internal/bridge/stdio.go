@@ -13,7 +13,7 @@ import (
 )
 
 const maxMCPMessage = 2 << 20
-const Version = "1.0.2"
+const Version = "1.1.0"
 
 type requestEnvelope struct {
 	ID     json.RawMessage `json:"id"`

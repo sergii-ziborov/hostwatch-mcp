@@ -1,0 +1,29 @@
+{
+  "name": "hostwatch-mcp",
+  "version": "1.1.0",
+  "description": "Account-connected Hostwatch MCP stdio bridge for Node.js clients",
+  "type": "module",
+  "bin": {
+    "hostwatch-mcp-node": "node/cli.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "node/cli.js",
+    "node/client.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test node/*.test.js",
+    "pack:check": "npm pack --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergii-ziborov/hostwatch-mcp.git"
+  },
+  "homepage": "https://gethostwatch.com",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": ["hostwatch", "mcp", "oauth", "stdio", "infrastructure"]
+}
